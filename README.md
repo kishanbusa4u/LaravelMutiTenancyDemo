@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Multi-Tenancy Demo
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/actions">
+    <img src="https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/workflows/tests/badge.svg" alt="Build Status">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">
+  </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About Laravel Multi-Tenancy Demo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project demonstrates the implementation of **multi-tenancy** in a Laravel application using the **[stancl/tenancy](https://github.com/stancl/tenancy)** package. It provides an example of how to manage multiple tenants (users or organizations) with their own isolated data (in separate databases) within a single Laravel application. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Key Features
 
-## Learning Laravel
+- **Tenant Management**: 
+  - Create, view, update, and delete tenants.
+  - Track tenant-specific domains and associated metadata.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Domain Routing**: 
+  - Each tenant can have one or more domains that point to their unique data, with automatic routing to the tenant's environment.
+  
+- **Tenant Isolation**: 
+  - Each tenant operates on its own database, ensuring complete data isolation.
+  
+- **Scalable Architecture**: 
+  - This application is designed to be scalable, allowing hundreds or thousands of tenants with minimal overhead.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Demo Screenshots
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Tenant List Page**: 
+  - Displaying all tenants with their domains and basic information.
 
-## Laravel Sponsors
+  ![Tenant List](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/tenant-list.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Create Tenant Page**: 
+  - A form for adding new tenants with relevant details.
 
-### Premium Partners
+  ![Create Tenant](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/tenant-create.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/kishanbusa4u/LaravelMutiTenancyDemo.git
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   cd LaravelMutiTenancyDemo
+   composer install
+   npm install
+   ```
+
+3. **Set Up Environment**:
+   Copy `.env.example` to `.env` and update the database and tenancy configurations.
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Run Migrations**:
+   Migrate the database.
+   ```bash
+   php artisan migrate
+   ```
+
+5. **Start Development Server**:
+   ```bash
+   php artisan serve
+   ```
+
+Visit `http://localhost:8000` to access the application.
+
+## Usage
+
+After completing the installation, you can:
+
+- **Create Tenants**: Use the admin panel to add tenants.
+- **Manage Tenants**: Edit and update tenant details.
+- **Manage Domains**: Assign domains to tenants to route to their specific databases.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to this project! Please refer to the [Laravel documentation](https://laravel.com/docs/contributions) for the contribution guidelines.
 
-## Code of Conduct
+### Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct) to ensure a welcoming community.
 
-## Security Vulnerabilities
+### Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you find any security vulnerabilities, please send an email to [taylor@laravel.com](mailto:taylor@laravel.com). Your issue will be handled promptly.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced and licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+### Notes:
+
+- **Repository Link**: Be sure to check that the URL in your badge links and GitHub links matches the correct repository (the one you just shared).
+- **Demo Screenshots**: Replace the images if necessary and upload them to your repository's **images** directory for better structure.
+- **Installation Steps**: If you have any special instructions or configurations, be sure to add them here.
