@@ -43,12 +43,12 @@ This project demonstrates the implementation of **multi-tenancy** in a Laravel a
 - **Tenant List Page**: 
   - Displaying all tenants with their domains and basic information.
 
-  ![Tenant List](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/images/tenant-list.png)
+  ![Tenant List](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/tenant-list.png)
 
 - **Create Tenant Page**: 
   - A form for adding new tenants with relevant details.
 
-  ![Create Tenant](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/images/tenant-create.png)
+  ![Create Tenant](https://github.com/kishanbusa4u/LaravelMutiTenancyDemo/blob/master/tenant-create.png)
 
 
 ## Installation
